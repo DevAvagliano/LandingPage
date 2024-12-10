@@ -517,12 +517,14 @@ footer {
     opacity: 0;
     transition: 0.3s;
     z-index: 10;
-    #nav_list {
-      flex-direction: column;
-      a {
-        font-size: 12pt;
-      }
-    }
+  }
+  #nav_list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nav_list a {
+    font-size: 12pt;
   }
 
   #openMenu,
@@ -553,7 +555,8 @@ footer {
     gap: 20px;
   }
   .header-logo img {
-    width: 250px;
+    width: 200px;
+    padding-bottom: 40px;
   }
   .header-button {
     display: none;
@@ -565,16 +568,12 @@ footer {
     display: flex;
   }
   .hero {
-    min-height: 70vh;
-  }
-  .hero h1 {
-    margin-top: -100px;
-    font-size: 25pt;
     width: 100%;
+    min-height: 80vh;
   }
+
   .hero p {
-    font-size: 12pt;
-    margin-bottom: 20px;
+    font-size: 0.8rem;
   }
   .hero-buttons {
     display: block;
