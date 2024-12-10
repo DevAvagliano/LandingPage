@@ -1,62 +1,98 @@
-openMenu.addEventListener('click', () => {
-  nav_menu.style.display = 'flex'
-  nav_menu.style.right = nav_menu.offsetWidth * -1 + 'px'
-  openMenu.style.display = 'none'
+$(document).ready(function () {
+  $('#mobile_btn').on('click', function () {
+    $('#mobile_menu').toggleClass('active')
+    $('#mobile_btn').find('i').toggleClass('fa-x')
+  })
 
-  setTimeout(() => {
-    nav_menu.style.opacity = '1'
-    nav_menu.style.right = '0'
-  }, 10)
-})
+  const sections = $('section')
+  const navItems = $('.nav-item')
 
-closeMenu.addEventListener('click', () => {
-  nav_menu.style.opacity = '0'
-  nav_menu.style.right = nav_menu.offsetWidth * -1 + 'px'
+  $(window).on('scroll', function () {
+    const header = $('header')
+    const scrollPosition = $(window).scrollTop() - header.outerHeight()
 
-  setTimeout(() => {
-    nav_menu.removeAttribute('style')
-    openMenu.removeAttribute('style')
-  }, 200)
-})
+    let activeSectionIndex = 0
 
-ScrollReveal().reveal('#menu', {
-  origin: 'left',
-  duration: 2000,
-  distance: '20%'
-})
+    if (scrollPosition <= 0) {
+      header.css('box-shadow', 'none')
+    } else {
+      header.css('box-shadow', '5px 1px 5px rgba(0, 0, 0, 0.1)')
+    }
 
-ScrollReveal().reveal('#cta', {
-  origin: 'right',
-  duration: 2000,
-  distance: '20%'
-})
+    sections.each(function (i) {
+      const section = $(this)
+      const sectionTop = section.offset().top - 96
+      const sectionBottom = sectionTop + section.outerHeight()
 
-ScrollReveal().reveal('.services-content', {
-  origin: 'right',
-  duration: 2000,
-  distance: '20%'
-})
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        activeSectionIndex = i
+        return false
+      }
+    })
+    navItems.removeClass('active')
+    $(navItems[activeSectionIndex]).addClass('active')
+  })
 
-ScrollReveal().reveal('.row-card-item', {
-  origin: 'right',
-  duration: 2000,
-  distance: '20%'
-})
+  openMenu.addEventListener('click', () => {
+    nav_menu.style.display = 'flex'
+    nav_menu.style.right = nav_menu.offsetWidth * -1 + 'px'
+    openMenu.style.display = 'none'
 
-ScrollReveal().reveal('.dados-container', {
-  origin: 'right',
-  duration: 2000,
-  distance: '20%'
-})
+    setTimeout(() => {
+      nav_menu.style.opacity = '1'
+      nav_menu.style.right = '0'
+    }, 10)
+  })
 
-ScrollReveal().reveal('#testimonial_chef', {
-  origin: 'left',
-  duration: 2000,
-  distance: '20%'
-})
+  closeMenu.addEventListener('click', () => {
+    nav_menu.style.opacity = '0'
+    nav_menu.style.right = nav_menu.offsetWidth * -1 + 'px'
 
-ScrollReveal().reveal('#testimonials_content', {
-  origin: 'right',
-  duration: 2000,
-  distance: '20%'
+    setTimeout(() => {
+      nav_menu.removeAttribute('style')
+      openMenu.removeAttribute('style')
+    }, 200)
+  })
+
+  ScrollReveal().reveal('#menu', {
+    origin: 'left',
+    duration: 2000,
+    distance: '20%'
+  })
+
+  ScrollReveal().reveal('#cta', {
+    origin: 'right',
+    duration: 2000,
+    distance: '20%'
+  })
+
+  ScrollReveal().reveal('.services-content', {
+    origin: 'right',
+    duration: 2000,
+    distance: '20%'
+  })
+
+  ScrollReveal().reveal('.row-card-item', {
+    origin: 'right',
+    duration: 2000,
+    distance: '20%'
+  })
+
+  ScrollReveal().reveal('.dados-container', {
+    origin: 'right',
+    duration: 2000,
+    distance: '20%'
+  })
+
+  ScrollReveal().reveal('#testimonial_chef', {
+    origin: 'left',
+    duration: 2000,
+    distance: '20%'
+  })
+
+  ScrollReveal().reveal('#testimonials_content', {
+    origin: 'right',
+    duration: 2000,
+    distance: '20%'
+  })
 })

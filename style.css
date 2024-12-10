@@ -470,14 +470,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  background-color: #1ad03f;
+  border-radius: 30px;
+  background: #1ad03f;
   position: fixed;
   bottom: 60px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  z-index: 5;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  z-index: 10;
 }
 
 /* -------------- RESPONSIVIDADE ---------------*/
@@ -510,7 +510,7 @@ footer {
     position: fixed;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     background-color: var(--color-brown-dark);
     height: 50vh;
     display: none;
@@ -538,6 +538,7 @@ footer {
   }
   #closeMenu {
     position: fixed;
+    margin-left: auto;
     right: 10px;
     top: 15px;
   }
@@ -556,7 +557,6 @@ footer {
   }
   .header-logo img {
     width: 200px;
-    padding-bottom: 40px;
   }
   .header-button {
     display: none;
