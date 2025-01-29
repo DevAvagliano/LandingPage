@@ -382,11 +382,12 @@ header {
 #testimonials_content {
   display: flex;
   justify-content: space-around;
-  padding: 0px 250px 0px 250px;
+  padding: 0px 100px 0px 100px;
   width: 100%;
   margin-top: 30px;
   display: flex;
   align-items: center;
+  
 }
 #testemonial_name {
   font-weight: 600;
@@ -434,7 +435,7 @@ footer {
 }
 
 /* -------------- RESPONSIVIDADE ---------------*/
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1200px) {
   #testimonials {
     flex-direction: column;
   }
@@ -443,6 +444,7 @@ footer {
   }
   #testimonials_content {
     align-items: center;
+    padding: 0px 50px 0px 50px;
   }
 }
 
@@ -513,7 +515,7 @@ footer {
     min-height: 80vh;
   }
   .hero p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .hero-buttons {
     display: block;
