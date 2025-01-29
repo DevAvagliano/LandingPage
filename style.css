@@ -25,7 +25,7 @@
   --color-whatsapp-dark: #204f46;
 }
 
-/* ---------------- Layout ---------------*/
+/* -- Layout --*/
 
 * {
   margin: 0;
@@ -82,9 +82,10 @@ header {
 .header-icons {
   display: flex;
   gap: 14px;
-  i {
-    color: var(--color-brown-extralight);
-  }
+}
+
+.header-icons i {
+  color: var(--color-brown-extralight);
 }
 
 .header-icons a:hover i {
@@ -136,6 +137,7 @@ header {
 }
 .bg-home {
   position: relative;
+  width: 100vw;
 }
 .bg-home::before {
   content: '';
@@ -166,15 +168,15 @@ header {
   margin-bottom: 30px;
 }
 .btn-default {
-  width: 230px;
+  width: 200px;
   border: none;
   background-color: #c4b39f;
   border-radius: 12px;
-  padding: 14px 15px;
+  padding: 10px 15px;
   font-weight: 500;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
   color: var(--color-primary-normal);
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 12px 0;
 }
 .btn-default a {
@@ -193,21 +195,27 @@ header {
   text-align: center;
   line-height: 100%;
   max-width: 100%;
-  font-size: 25pt;
+  font-size: 30pt;
+  margin-bottom: 20px;
 }
 .hero span {
   color: var(--color-brown-dark);
 }
+.hero p:nth-child(1) {
+  margin-bottom: -5px;
+}
 .hero p {
   text-align: center;
-  margin: 20px 30px;
   font-size: 15pt;
 }
+
+
 .hero-buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 30px;
+  margin-top: 20px;
 }
 .button-whatsapp {
   border: none;
@@ -244,12 +252,14 @@ header {
   color: var(--color-primary-normal);
   font-size: 1.2rem;
   margin: 14px 0;
-  i {
-    color: var(--color-primary-normal);
-    font-size: 20px;
-    margin: 0 8px;
-  }
 }
+
+.button-contact i {
+  color: var(--color-primary-normal);
+  font-size: 20px;
+  margin: 0 8px;
+}
+
 .button-contact:hover {
   animation: translate_button 0.5s;
 }
@@ -265,6 +275,7 @@ header {
 
 /* ---------------- Section Services ---------------*/
 .services {
+  width: 100vw;
   border-width: 5px;
   background-color: var(--color-brown-extralight);
   padding-top: 80px;
@@ -275,6 +286,10 @@ header {
   justify-content: center;
 }
 .services .row-card-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   background-color: var(--color-brown-normal);
   width: 350px;
   height: auto;
@@ -283,13 +298,12 @@ header {
   border-radius: 15px;
   transition: 0.5s;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-  strong {
+}
+.services .row-card-item strong {
     font-size: 1.2rem;
-  }
 }
 .services .row-card-item:hover {
-  background-color: var(--color-brown-extralight);
-  margin-top: -1px;
+  background-color: rgba(235, 185, 138, 0.2);
 }
 .services .row-card-item img {
   border-radius: 15px;
@@ -309,6 +323,7 @@ header {
 /* ---------------- Section dados ---------------*/
 
 .dados {
+  width: 100vw;
   background-color: var(--color-brown-extralight);
 }
 .dados-container {
@@ -365,11 +380,13 @@ header {
   width: 300px;
 }
 #testimonials_content {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 250px 0px 250px;
   width: 100%;
   margin-top: 30px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 #testemonial_name {
   font-weight: 600;
@@ -377,14 +394,23 @@ header {
 
 /* ---------------- Section Footer ---------------*/
 footer {
+  width: 100vw;
   background-color: var(--color-black-light);
   padding-bottom: 5%;
 }
+
 #footer_items {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
+#footer_items img {
+  border:0;
+  width: 88px;
+  height: 31px;
+}
+
 #copyright,
 #mailto {
   color: var(--color-brown-extralight);
@@ -401,7 +427,7 @@ footer {
   background: #1ad03f;
   position: fixed;
   bottom: 60px;
-  right: 10px;
+  right: 50px;
   width: 60px;
   height: 60px;
   z-index: 10;
